@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#1a1a1a"/>
+  
+  <!-- Hexagon outline -->
+  <g stroke="#0099ff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 100 40 L 150 70 L 150 130 L 100 160 L 50 130 L 50 70 Z"/>
+  </g>
+  
+  <!-- Z letter -->
+  <g fill="#ffffff">
+    <path d="M 70 75 L 130 75 L 70 125 L 130 125" stroke="#ffffff" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

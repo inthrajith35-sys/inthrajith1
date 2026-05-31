@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zytheron — Software Engineering Studio</title>
+<title>Zytheron — Zytheron | Software Development & IT Solutions</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bricolage+Grotesque:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -71,9 +73,12 @@ body:has(a:hover) #cur-trail, body:has(button:hover) #cur-trail { opacity: 0; }
 @keyframes navIn { from { transform: translateY(-100%); } to { transform: translateY(0); } }
 
 .logo {
-  font-family: var(--serif); font-weight: 600; font-size: 1.35rem;
-  letter-spacing: .01em; color: var(--black);
-  text-decoration: none;
+  display: flex; align-items: center; gap: .8rem;
+  text-decoration: none; transition: opacity .2s;
+}
+.logo:hover { opacity: 0.85; }
+.logo img {
+  height: 48px; width: auto; object-fit: contain;
 }
 .logo em { font-style: italic; font-weight: 300; color: var(--accent); }
 
@@ -696,7 +701,7 @@ footer::before {
 
 <!-- NAV -->
 <header class="topbar">
-  <a class="logo" href="#">Zytheron<em>.</em></a>
+  <a class="logo" href="#"><img src="logo.png" alt="Zytheron Logo"></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Work</a></li>
