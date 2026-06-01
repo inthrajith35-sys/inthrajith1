@@ -1,0 +1,53 @@
+# Zytheron Software - robots.txt
+# Allow all web crawlers to index the site
+
+# Allow all user agents by default
+User-agent: *
+Allow: /
+Allow: /*.js
+Allow: /*.css
+
+# Disallow sensitive files and directories
+Disallow: /private/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /cgi-bin/
+Disallow: /includes/
+Disallow: /uploads/
+
+# Crawl delay (in seconds) - gentle crawling
+Crawl-delay: 1
+
+# Request rate (pages per second)
+Request-rate: 10/1
+
+# Sitemaps
+Sitemap: https://zytheron.io/sitemap.xml
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing-specific rules
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Allow image crawlers
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot-Image
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

@@ -1,0 +1,69 @@
+# Netlify Configuration for Zytheron Software
+# Deploy with optimal performance and SEO settings
+
+[build]
+  command = "echo 'Site ready for deployment'"
+  publish = "."
+
+[[redirects]]
+  from = "/privacy"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/terms"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/#cta"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "index.html"
+  status = 200
+
+# Security and Performance Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Cache headers for HTML
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+    Content-Type = "text/html; charset=UTF-8"
+
+# Cache headers for CSS and JavaScript
+[[headers]]
+  for = "/*.{css,js}"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Encoding = "gzip"
+
+# Cache headers for Images
+[[headers]]
+  for = "/*.{jpg,jpeg,png,gif,ico,webp,svg}"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache headers for Fonts
+[[headers]]
+  for = "/*.{woff,woff2,ttf,otf,eot}"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Preload critical resources
+[[headers]]
+  for = "/"
+  [headers.values]
+    Link = "</style.css>; rel=preload; as=style, </script.js>; rel=preload; as=script, <https://fonts.googleapis.com>; rel=preconnect"
