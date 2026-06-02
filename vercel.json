@@ -73,11 +73,5 @@
       "destination": "/#cta",
       "permanent": false
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
   ]
 }
