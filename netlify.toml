@@ -2,8 +2,8 @@
 # Deploy with optimal performance and SEO settings
 
 [build]
-  command = "echo 'Site ready for deployment'"
-  publish = "."
+  command = "npm run build"
+  publish = "dist"
 
 [[redirects]]
   from = "/privacy"
@@ -17,7 +17,7 @@
 
 [[redirects]]
   from = "/contact"
-  to = "/#cta"
+  to = "/#contact"
   status = 301
 
 [[redirects]]
@@ -66,4 +66,4 @@
 [[headers]]
   for = "/"
   [headers.values]
-    Link = "</style.css>; rel=preload; as=style, </script.js>; rel=preload; as=script, <https://fonts.googleapis.com>; rel=preconnect"
+    Link = "<https://fonts.googleapis.com>; rel=preconnect"
